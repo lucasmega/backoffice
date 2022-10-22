@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
+import { SharedService } from '../../services/shared.service';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -12,21 +14,24 @@ export class SidebarComponent implements OnInit {
   @ViewChild('openNav') elementRefOpenNav: ElementRef | undefined;
 
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private sharedService: SharedService) { 
+    this.sharedService.emitSidenav.subscribe(() => this.openNav());
+  }
 
   ngOnInit(): void { }
+
+
+  public closeNav(): void {
+    this.renderer.setStyle(this.elementRefMain?.nativeElement, 'marginLeft', '0%');
+    this.renderer.setStyle(this.elementRefSideBar?.nativeElement, 'display', 'none');
+    this.renderer.setStyle(this.elementRefOpenNav?.nativeElement, 'display', 'inline-block');
+  }
 
   public openNav(): void {
     this.renderer.setStyle(this.elementRefMain?.nativeElement, 'marginLeft', '25%');
     this.renderer.setStyle(this.elementRefSideBar?.nativeElement, 'width', '25%');
     this.renderer.setStyle(this.elementRefSideBar?.nativeElement, 'display', 'block');
     this.renderer.setStyle(this.elementRefOpenNav?.nativeElement, 'display', 'none');
-  }
-
-  public closeNav(): void {
-    this.renderer.setStyle(this.elementRefMain?.nativeElement, 'marginLeft', '0%');
-    this.renderer.setStyle(this.elementRefSideBar?.nativeElement, 'display', 'none');
-    this.renderer.setStyle(this.elementRefOpenNav?.nativeElement, 'display', 'inline-block');
   }
 
 }
