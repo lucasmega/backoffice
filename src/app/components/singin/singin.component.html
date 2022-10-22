@@ -23,9 +23,17 @@
                 <input type="password" matInput placeholder="******">
             </mat-form-field>
 
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <label>Esqueci minha senha</label>
+                    </div>
+                </div>
+            </div>
+
             <br />
 
-            <button mat-button>Entrar</button>
+            <button mat-button [routerLink]="'/home'">Entrar</button>
         </form>
 
     </div>
