@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
 
 
   constructor(private renderer: Renderer2, private sharedService: SharedService) { 
-    this.sharedService.emitSidenav.subscribe(() => this.openNav());
+    this.sharedService.emitSidenav.subscribe((isOpen: boolean) => isOpen ? this.openNav() : this.closeNav());
   }
 
   ngOnInit(): void { }

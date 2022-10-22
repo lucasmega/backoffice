@@ -10,12 +10,14 @@ import { SharedService } from '../../services/shared.service';
 })
 export class MenuComponent implements OnInit {
 
+  public isOpen = false;
+
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void { }
 
-  public openNav(): void {
-    this.sharedService.sidenav(true);
+  public toogle(): void {
+    this.sharedService.toogle(this.isOpen = !this.isOpen);
   }
 
 }

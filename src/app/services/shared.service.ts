@@ -9,7 +9,7 @@ export class SharedService {
 
   constructor() { }
 
-  public sidenav(isSidenav: boolean) {
+  public toogle(isSidenav: boolean) {
     this.emitSidenav.emit(isSidenav);
   }
 
