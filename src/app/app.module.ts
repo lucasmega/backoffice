@@ -40,13 +40,17 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { SinginComponent } from './components/singin/singin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent,
+    SinginComponent
   ],
   imports: [
     BrowserModule,

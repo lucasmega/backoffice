@@ -20,7 +20,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void { }
 
-
   public closeNav(): void {
     this.renderer.setStyle(this.elementRefMain?.nativeElement, 'marginLeft', '0%');
     this.renderer.setStyle(this.elementRefSideBar?.nativeElement, 'display', 'none');
