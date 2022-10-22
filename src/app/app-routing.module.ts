@@ -15,7 +15,8 @@ const routes: Routes = [
   }, 
   {
     path: '',
-    component: SinginComponent
+    redirectTo: '/sing-in',
+    pathMatch: 'full'
   },
   {
     path: '**',
