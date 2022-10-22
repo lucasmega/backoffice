@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SinginComponent } from './components/singin/singin.component';
 import { HomeComponent } from './components/home/home.component';
+import { SinginComponent } from './components/singin/singin.component';
 
 const routes: Routes = [
   {
@@ -12,6 +12,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  }, 
+  {
+    path: '',
+    component: SinginComponent
+  },
+  {
+    path: '**',
+    component: SinginComponent
   }
 ];
 
